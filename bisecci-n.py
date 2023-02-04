@@ -1,7 +1,8 @@
+# %% [code]
 # Función en la que se va a encontrar la raíz
 def f(x):
     y = float()
-    y = (x**3) + (4*x**2) - 10
+    y = (0.95*(x**3)) - (5.9*(x**2)) + (10.9*x) - 6
     return float(y)
 
 # Método de bisección
@@ -17,6 +18,7 @@ def biseccion(xinf, xsup, maxit, tol, exact):
         f_xsup = f(xsup)
         # Calcular el punto medio
         punto_medio = float((xinf + xsup)/2)
+        print(punto_medio)
         # Evaluar el punto medio en la función
         f_raiz = f(punto_medio)
         # Si el intervalo es muy chico... salir
@@ -39,10 +41,10 @@ def biseccion(xinf, xsup, maxit, tol, exact):
         iteracion += 1
     return punto_medio
 
-xinf = float(1)
-xsup = float(2)
+xinf = float(3)
+xsup = float(4)
 maxit = int(100)
 tol = float(0.0005)
 exact = float(0.00005)
 solucion = biseccion(xinf, xsup, maxit, tol, exact)
-print(solucion)
+print('La solución es: ' + str(solucion))
